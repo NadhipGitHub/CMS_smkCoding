@@ -6,9 +6,6 @@
     <title>nadhipp</title>
 </head>
 <body>
-        <center><a href="/n1">dashboard</a> </center>
-         <h1>home nadhippp</h1>
-         <p>tess first commit</p>
-         <p>commit commit</p>
+        <p> first commit</p>
 </body>
 </html>
