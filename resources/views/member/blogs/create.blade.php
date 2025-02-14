@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Tambah Tulisan
+            Travel
         </h2>
     </x-slot>
     <div class="py-12">
@@ -11,11 +11,11 @@
                     <section>
                         <header>
                             <h2 class="text-lg font-medium text-gray-900">
-                                Tambah  Tulisan
+                                Buat Travel
                             </h2>
 
                             <p class="mt-1 text-sm text-gray-600">
-                                Silakan melakukan penambahan data
+                                Silakan melakukan pengisian form berikut untuk membuat travel
                             </p>
                         </header>
 

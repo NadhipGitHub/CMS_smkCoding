@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Pengaturan Blog <a href="{{ route('member.blogs.create')}}" 
-            class="bg-blue-400 p-2 rounded-md text-sm">Tambah tulisan</a>
+            Pengaturan Travel <a href="{{ route('member.blogs.create')}}" 
+            class="bg-blue-400 p-2 rounded-md text-sm">Buat Perjalanan</a>
         </h2>
     </x-slot>
     <x-slot name="headerRight">
@@ -22,7 +22,7 @@
                         <thead>
                             <tr class="text-center font-bold">
                                 <td class="border px-6 py-4 w-[80px]">No</td>
-                                <td class="border px-6 py-4">Judul</td>
+                                <td class="border px-6 py-4">Tempat</td>
                                 <td class="border px-6 py-4 lg:w-[250px] hidden lg:table-cell">Tanggal</td>
                                 <td class="border px-6 py-4 lg:w-[100px] hidden lg:table-cell">Status</td>
                                 <td class="border px-6 py-4 lg:w-[250px] w-[100px]">Aksi</td>
