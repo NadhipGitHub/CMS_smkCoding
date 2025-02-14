@@ -9,19 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void //buat bikin tabel
+    public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique(); // sinkatan judul
-            $table->text('description')->nullable(); //
-            $table->text('content')->nullable(); //
-            $table->enum('status', ['draf', 'publish'])->default('draf'); //
-            $table->string('thumbnail')->nullable(); //
+            $table->string('slug')->unique();  
+            $table->text('description')->nullable();
+            $table->text('content')->nullable();
+            $table->enum('status',['draft','publish'])->default('draft');
+            $table->string('thumbnail')->nullable();
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); //foreign key
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,7 +29,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void //buat hapus tabel0
+    public function down(): void
     {
         Schema::dropIfExists('posts');
     }

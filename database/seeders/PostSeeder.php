@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Post;
+use Illuminate\Support\Str; 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PostSeeder extends Seeder
 {
@@ -13,12 +15,29 @@ class PostSeeder extends Seeder
     public function run(): void
     {
         $judul = [
-            'nadhip',
-            'nadhip2',
-            'nadhip3',
-            'nadhip4',
+            'I SAW THE DEVIL'
         ];
-
         
+        foreach ($judul as $j){
+            $slug =  Str::slug($j);
+            $slugOri = $slug;
+            $count = 1;
+            while(Post::where('slug',$slug)->exists()){
+                
+                $slug = $slugOri . "-" . $count;
+                $count++;
+            }
+         
+
+            Post::create([
+                'title' => $j,
+                'slug' => $slug,
+                'description' => 'Deskripsi untuk' . $j,
+                'content' => 'konten untuk ' . $j,
+                'status'=> 'publish',
+                'user_id' => '1'
+
+            ]);
+        }
     }
 }
