@@ -9,7 +9,16 @@ use App\Models\Post;
 class HomePageController extends Controller
 {
     public function index(){
-        $data = Post::where('status','publish')->orderby('id','desc')->paginate(5);
+        
+        $lastData = $this->lastData();
+   
+
+        $data = Post::where('status','publish')->where()->orderby('id','desc')->paginate(2);
         return view('components.front.home-page',compact('data'));
+    }
+
+    private function lastData(){
+        $data = Post::where('status','publish')->orderby('id','desc')->latest()->first();
+        return $data;
     }
 }
